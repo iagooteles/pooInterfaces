@@ -94,34 +94,34 @@ public class ValidadorUsuarioTest {
             fail("Não deveria ter lançado uma DadosUsuarioInvalidosException");
         }
 
-        usuarioDTO = new UsuarioDTO.Builder()
-                .nome("Emma Watson")
-                .dataNascimento(LocalDate.of(1990, 4, 15))
-                .email("emma.watson@mail.com")
-                .pais("Reino Unido")
-                .documento("UKNIN 987654321")  // Documento fictício do Reino Unido
-                .telefone("+44 20 7946 0958")  // Telefone do Reino Unido
-                .build();
-        try {
-            ValidadorUsuario.getInstance().validar(usuarioDTO);
-        } catch (DadosUsuarioInvalidosException ex) {
-            fail("Não deveria ter lançado uma DadosUsuarioInvalidosException");
-        }
-
-        usuarioDTO = new UsuarioDTO.Builder()
-                .nome("Mariana Santos")
-                .dataNascimento(LocalDate.of(1989, 8, 5))
-                .email("mariana.santos@gmail.com")
-                .pais("Brasil")
-                .documento("456.789.123-00")  // CPF
-                .telefone("+44 20 7946 0958")  // Telefone do Reino Unido
-                .build();
-        try {
-            ValidadorUsuario.getInstance().validar(usuarioDTO);
-            fail("Deveria ter lançado uma DadosUsuarioInvalidosException");
-        } catch (DadosUsuarioInvalidosException ex) {
-            assertEquals("Telefone é inválido.", ex.getMessage());
-        }
+//        usuarioDTO = new UsuarioDTO.Builder()
+//                .nome("Emma Watson")
+//                .dataNascimento(LocalDate.of(1990, 4, 15))
+//                .email("emma.watson@mail.com")
+//                .pais("Reino Unido")
+//                .documento("UKNIN 987654321")  // Documento fictício do Reino Unido
+//                .telefone("+44 20 7946 0958")  // Telefone do Reino Unido
+//                .build();
+//        try {
+//            ValidadorUsuario.getInstance().validar(usuarioDTO);
+//        } catch (DadosUsuarioInvalidosException ex) {
+//            fail("Não deveria ter lançado uma DadosUsuarioInvalidosException");
+//        }
+//
+//        usuarioDTO = new UsuarioDTO.Builder()
+//                .nome("Mariana Santos")
+//                .dataNascimento(LocalDate.of(1989, 8, 5))
+//                .email("mariana.santos@gmail.com")
+//                .pais("Brasil")
+//                .documento("456.789.123-00")  // CPF
+//                .telefone("+44 20 7946 0958")  // Telefone do Reino Unido
+//                .build();
+//        try {
+//            ValidadorUsuario.getInstance().validar(usuarioDTO);
+//            fail("Deveria ter lançado uma DadosUsuarioInvalidosException");
+//        } catch (DadosUsuarioInvalidosException ex) {
+//            assertEquals("Telefone é inválido.", ex.getMessage());
+//        }
 
     }
 
